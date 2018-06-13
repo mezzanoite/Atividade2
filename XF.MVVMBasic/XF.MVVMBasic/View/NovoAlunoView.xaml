@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.MVVMBasic.View.NovoAlunoView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry 
+                x:Name="etRM"
+                Placeholder="RM"
+                Keyboard="Numeric"
+                Text="{Binding Aluno.RM}"/>
+            <Entry
+                x:Name="etNome"
+                Placeholder="Nome do aluno"
+                Text="{Binding Aluno.Nome}"/>
+            <Entry 
+                x:Name="etEmail"
+                Placeholder="E-mail do aluno"
+                Keyboard="Email"
+                Text="{Binding Aluno.Email}"/>
+            <Button
+                x:Name="btCadastrar"
+                Text="CADASTRAR"
+                Command="{Binding CadastrarAlunoCommand}"
+                CommandParameter="{Binding Aluno}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

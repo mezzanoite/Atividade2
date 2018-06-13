@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.MVVMBasic.View.AlunoView"
+             Title="Alunos">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Text="Adicionar" 
+            x:Name="btAdicionarAluno" 
+            Command="{Binding TelaAlunoCommand}" 
+            Order="Primary" 
+            Priority="1" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding ListaAlunos}"
+              CachingStrategy="RecycleElement"
+              RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"></RowDefinition>
+                                    <RowDefinition Height="40"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="150"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Nome}" Style="{StaticResource labelStyle}" />
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding Email}" Style="{StaticResource labelStyle}" />
+                            <Label Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Text="{Binding RM}" Style="{StaticResource labelStyle}" />
+                        </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <!--<ListView x:Name="lvAlunos">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nome}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Text="Aluno" Font="20" />
+            <Label Text="{Binding Nome}" />
+            <Label Text="{Binding RM}" />
+            <Label Text="{Binding Email}" />
+            <Button
+                x:Name="btToNovoAluno"
+                Text="Adicionar Aluno"
+                Clicked="OnNovoAlunoClicked"/>-->
+
+    </ContentPage.Content>
+</ContentPage>
